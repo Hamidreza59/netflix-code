@@ -1,0 +1,8 @@
+Flask
+connexion
+Flask-SQLAlchemy
+flask-marshmallow 
+marshmallow-sqlalchemy 
+marshmallow
+flask_cors
+PyJWT==1.7.1

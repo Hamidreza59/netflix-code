@@ -1,0 +1,56 @@
+<div fxLayoutAlign="center center">
+    <mat-form-field fxFlex="40%">
+        <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="filter">
+    </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="content_type">
+       <mat-header-cell *matHeaderCellDef mat-sort-header>Type</mat-header-cell>
+       <mat-cell *matCellDef="let element">{{ element.content_type}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.title }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="director">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Director</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.director }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="cast">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Cast</mat-header-cell>
+        <mat-cell *matCellDef="let element" >{{ element.cast }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="country">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Country</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.country }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="date_added">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Date Added</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.date_added | date: "longDate" }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="release_year">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Release Year</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.release_year }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="rating">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Rating</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.rating }}</mat-cell>
+     </ng-container>
+     <ng-container matColumnDef="duration">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Duration</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.duration }}</mat-cell>
+     </ng-container>  
+     <ng-container matColumnDef="listed_in">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Listed</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.listed_in }}</mat-cell>
+     </ng-container>  
+     <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Description</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.description }}</mat-cell>
+     </ng-container>                 
+     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+     <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<mat-paginator [pageSizeOptions]="[10, 25, 50, 100]" [pageSize]="25" showFirstLastButtons>   
+</mat-paginator>

@@ -1,0 +1,9 @@
+<div>
+    <div mat-dialog-content >    
+          <textarea style="height: 200px; width: 400px;" placeholder="Please let us know"  ref-textarea [(ngModel)]="data.review"></textarea>        
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">No Thanks</button>
+        <button mat-button (click)="onSubmit()" cdkFocusInitial>Ok</button>
+    </div>
+</div>

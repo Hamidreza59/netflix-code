@@ -1,0 +1,64 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /movie:
+    get:
+      operationId: "movie.read_all"
+      tags:
+        - "Movie"
+      summary: "Read the entire set of movies"
+      description: "Read the entire set of movies"
+      responses:
+        200:
+          description: "Successfully read movie set operation"
+          schema:
+            type: "array"
+            items:
+              properties:
+                show_id:
+                  type: "integer"
+                  description: "Id of the movie"
+                content_type:
+                  type: "string"
+                  description: "Type of movie"
+                title:
+                  type: "string"
+                  description: "Title of move"
+                director:
+                  type: "string"
+                  description: "director of movie"
+                cast:
+                  type: "string"
+                  description: "The cast of move"
+                country:
+                  type: "string"
+                  description: "The country move is made"
+                date_added:
+                  type: "string"
+                  description: "The date move release"
+                release_year:
+                   type: "integer"
+                   description: "The year move release"   
+                rating:
+                   type: "string"
+                   description: "Rating of the movie"
+                duration:
+                   type: "string"
+                   description: "Duration of movie"
+                listed_in:
+                   type: "string"
+                   description: "The Jenres of movie"  
+                description:
+                   type: "string"
+                   Description: "description of movie"   

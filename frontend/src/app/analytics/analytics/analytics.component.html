@@ -1,0 +1,5 @@
+<div fxFlex fxLayout="row" fxFlex="100" fxLayout.xs="column">
+    <div *ngFor="let chart of charts" class="canvas">
+        <app-chart  [chartData]=chart.data [title]=chart.title></app-chart>
+    </div>  
+</div>
